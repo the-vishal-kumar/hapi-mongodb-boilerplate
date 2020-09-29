@@ -49,6 +49,7 @@ const init = async () => {
 		let payload = {};
 		switch (request.method) {
 		case `get`:
+		case `delete`:
 			payload = request.query;
 			break;
 		case `post`:
