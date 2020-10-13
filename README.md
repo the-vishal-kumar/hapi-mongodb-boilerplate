@@ -41,6 +41,8 @@ Application contains a simple signup-login mechanism.
     |   ├──models
     |   ├──routes
     |   ├──services
+    |   |   ├──index.js
+    |   |   ├──wrapperService.js
     |   ├──util
     |   |   ├──bootstrap.js
     |   |   ├──index.js
