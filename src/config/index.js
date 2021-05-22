@@ -3,7 +3,7 @@
  * Vishal Kumar
  */
 
-"use strict";
+`use strict`;
 
 const serverConfig = require(`./serverConfig`);
 const dbConfig = require(`./dbConfig`);

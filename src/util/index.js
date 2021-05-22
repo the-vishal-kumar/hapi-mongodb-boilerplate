@@ -3,7 +3,7 @@
  * Vishal Kumar
  */
 
-"use strict";
+`use strict`;
 
 const Bootstrap = require(`./bootstrap`);
 const Rest = require(`./rest`);

@@ -3,7 +3,7 @@
  * Vishal Kumar
  */
 
-"use strict";
+`use strict`;
 
 const Joi = require(`@hapi/joi`);
 const { User: UserController } = require(`../controllers`);
@@ -63,16 +63,16 @@ module.exports = [
 	{
 		method: `POST`,
 		path: `/user/login`,
+		// eslint-disable-next-line no-unused-vars
+		handler: async (req, h) => {
+			try {
+				const data = await UserController.login(req.payload);
+				return successAction(data);
+			} catch (error) {
+				return failAction(error);
+			}
+		},
 		options: {
-			// eslint-disable-next-line no-unused-vars
-			handler: async (req, h) => {
-				try {
-					const data = await UserController.login(req.payload);
-					return successAction(data);
-				} catch (error) {
-					return failAction(error);
-				}
-			},
 			description: `login a user account`,
 			notes: `login a user account`,
 			tags: [`api`, `User`],
@@ -149,17 +149,17 @@ module.exports = [
 	{
 		method: `PUT`,
 		path: `/user/resetInteger`,
+		// eslint-disable-next-line no-unused-vars
+		handler: async (req, h) => {
+			try {
+				const user = req && req.auth && req.auth.credentials;
+				const data = await UserController.resetInteger(user, req.payload);
+				return successAction(data);
+			} catch (error) {
+				return failAction(error);
+			}
+		},
 		options: {
-			// eslint-disable-next-line no-unused-vars
-			handler: async (req, h) => {
-				try {
-					const user = req && req.auth && req.auth.credentials;
-					const data = await UserController.resetInteger(user, req.payload);
-					return successAction(data);
-				} catch (error) {
-					return failAction(error);
-				}
-			},
 			auth: `userAuth`,
 			description: `reset integer`,
 			notes: `reset integer`,

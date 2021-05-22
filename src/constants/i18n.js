@@ -3,7 +3,7 @@
  * Vishal Kumar
  */
 
-"use strict";
+`use strict`;
 
 module.exports = {
 	gender: {

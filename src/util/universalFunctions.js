@@ -3,7 +3,7 @@
  * Vishal Kumar
  */
 
-"use strict";
+`use strict`;
 
 const Jwt = require(`jsonwebtoken`);
 const MD5 = require(`md5`);

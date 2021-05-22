@@ -3,7 +3,7 @@
  * Vishal Kumar
  */
 
-"use strict";
+`use strict`;
 
 const Hapi = require(`@hapi/hapi`);
 const Routes = require(`../routes`);

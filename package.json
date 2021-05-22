@@ -1,31 +1,43 @@
 {
-  "name": "hapi-mongodb-template",
+  "name": "hapi-mongodb-boilerplate",
   "version": "1.0.0",
-  "description": "Backend Template of an Integer Incrementing Service",
+  "description": "A NodeJs application with Express framework, MongoDb as database, Mongoose as ODM.",
   "main": "src/index.js",
   "scripts": {
     "start": "node .",
+    "dev": "nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pretest": "./node_modules/.bin/eslint --ignore-path .gitignore . --fix",
+    "lint": "./node_modules/.bin/eslint --ignore-path .gitignore .",
+    "lint-fix": "./node_modules/.bin/eslint --ignore-path .gitignore . --fix",
     "prettier": "npx prettier --write '**/*.js'"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run pretest"
+      "pre-commit": "npm run lint-fix"
     }
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/the-vishal-kumar/hapi-mongodb-template"
+    "url": "git+https://github.com/the-vishal-kumar/hapi-mongodb-boilerplate"
+  },
+  "bugs": {
+    "url": "https://github.com/the-vishal-kumar/hapi-mongodb-boilerplate/issues"
+  },
+  "homepage": "https://github.com/the-vishal-kumar/hapi-mongodb-boilerplate#readme",
+  "engines": {
+    "yarn": "1.x",
+    "node": "12.x"
   },
   "keywords": [
     "NodeJs",
+    "Boilerplate",
     "HapiJs",
     "MongoDB",
-    "Mongoose"
+    "Mongoose",
+    "Joi"
   ],
-  "author": "Vishal Kumar",
-  "license": "ISC",
+  "author": "Vishal Kumar <vishal194kumar@gmail.com>",
+  "license": "AGPL-3.0-or-later",
   "dependencies": {
     "@hapi/hapi": "^19.1.1",
     "@hapi/inert": "^6.0.1",
@@ -45,6 +57,7 @@
   "devDependencies": {
     "eslint": "^7.9.0",
     "husky": "^4.3.0",
-    "lint-staged": "^10.4.0"
+    "lint-staged": "^10.4.0",
+    "nodemon": "^2.0.7"
   }
 }

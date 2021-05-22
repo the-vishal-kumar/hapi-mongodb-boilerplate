@@ -3,15 +3,17 @@
  * Vishal Kumar
  */
 
-"use strict";
+`use strict`;
 
 require(`dotenv`).config();
-// eslint-disable-next-line no-undef
-const NODE_ENV = process.env.NODE_ENV || `development`;
-const { name } = require(`../../package.json`);
 
 // eslint-disable-next-line no-undef
-const mongoUri = process.env.MONGO_CLUSTER_URI || `mongodb://localhost:27017/${name}-${NODE_ENV}`;
+const { NODE_ENV, MONGO_CLUSTER_URI } = process.env;
+const { name } = require(`../../package.json`);
+console.log(`MONGO_CLUSTER_URI==>`, MONGO_CLUSTER_URI, `---MONGO_CLUSTER_URI`);
+const mongoUri =
+	MONGO_CLUSTER_URI ||
+	`mongodb://localhost:27017/${name}-${NODE_ENV || `development`}`;
 
 module.exports = {
 	mongoUri,

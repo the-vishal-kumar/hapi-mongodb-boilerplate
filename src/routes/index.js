@@ -3,9 +3,7 @@
  * Vishal Kumar
  */
 
-"use strict";
-
-"use strict";
+`use strict`;
 
 const userRoute = require(`./userRoute`);
 const staticFilesRoute = require(`./staticFilesRoute`);
@@ -19,14 +17,14 @@ module.exports = [
 	{
 		method: `GET`,
 		path: `/`,
+		// eslint-disable-next-line no-unused-vars
+		handler: (req, h) => {
+			return `Welcome to <strong>${name}</strong>.<br>
+			Go to <a href='/documentation'>API Documentation</a><br>
+			Contact Author <a href='https://www.linkedin.com/in/the-vishal-kumar/'>${author}</a><br>
+			Go to <a href='${url}'>Github Repo</a>`;
+		},
 		options: {
-			// eslint-disable-next-line no-unused-vars
-			handler: (req, h) => {
-				return `Welcome to <strong>${name}</strong>.<br>
-                Go to <a href='/documentation'>API Documentation</a><br>
-                Contact Author <a href='https://www.linkedin.com/in/the-vishal-kumar/'>${author}</a><br>
-                Go to <a href='${url}'>Github Repo</a>`;
-			},
 			description: `home`,
 			notes: `home`,
 			tags: [`api`],
@@ -40,12 +38,12 @@ module.exports = [
 	{
 		method: `*`,
 		path: `/{any*}`,
+		// eslint-disable-next-line no-unused-vars
+		handler: (req, h) => {
+			return `404 Error! Page Not Found!`;
+		},
 		options: {
 			description: `Page Not Found`,
-			// eslint-disable-next-line no-unused-vars
-			handler: (req, h) => {
-				return `404 Error! Page Not Found!`;
-			},
 		},
 	},
 	...userRoute,

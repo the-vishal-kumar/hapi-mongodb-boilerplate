@@ -3,7 +3,7 @@
  * Vishal Kumar
  */
 
-"use strict";
+`use strict`;
 
 const { name, version } = require(`../../package`);
 // eslint-disable-next-line no-undef

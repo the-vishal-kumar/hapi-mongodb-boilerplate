@@ -3,7 +3,7 @@
  * Vishal Kumar
  */
 
-"use strict";
+`use strict`;
 
 // const Services = require(`../services`);
 // const Constants = require(`../constants`);

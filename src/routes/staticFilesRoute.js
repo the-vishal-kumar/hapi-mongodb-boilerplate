@@ -3,17 +3,17 @@
  * Vishal Kumar
  */
 
-"use strict";
+`use strict`;
 
 module.exports = [
 	{
 		method: `GET`,
 		path: `/favicon.ico`,
+		handler: (req, h) => {
+			// eslint-disable-next-line no-undef
+			return h.file(`${__basedir}/public/favicon.ico`);
+		},
 		options: {
-			handler: (req, h) => {
-				// eslint-disable-next-line no-undef
-				return h.file(`${__basedir}/public/favicon.ico`);
-			},
 			description: `fetch favicon`,
 			notes: `fetch favicon`,
 			tags: [`app`],

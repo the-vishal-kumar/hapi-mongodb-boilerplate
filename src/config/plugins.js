@@ -4,7 +4,7 @@
  * Vishal Kumar
  */
 
-"use strict";
+`use strict`;
 
 const Inert = require(`@hapi/inert`);
 const Vision = require(`@hapi/vision`);

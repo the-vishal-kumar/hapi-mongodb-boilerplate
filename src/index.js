@@ -3,7 +3,7 @@
  * Vishal Kumar
  */
 
-"use strict";
+`use strict`;
 // eslint-disable-next-line no-undef
 global.__basedir = __dirname;
 

@@ -3,7 +3,7 @@
  * Vishal Kumar
  */
 
-"use strict";
+`use strict`;
 
 module.exports = {
 	User: require(`./wrapperService`)(`User`),
