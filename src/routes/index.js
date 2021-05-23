@@ -10,7 +10,7 @@ const staticFilesRoute = require(`./staticFilesRoute`);
 const {
 	name,
 	author,
-	repository: { url },
+	homepage
 } = require(`../../package.json`);
 
 module.exports = [
@@ -22,7 +22,7 @@ module.exports = [
 			return `Welcome to <strong>${name}</strong>.<br>
 			Go to <a href='/documentation'>API Documentation</a><br>
 			Contact Author <a href='https://www.linkedin.com/in/the-vishal-kumar/'>${author}</a><br>
-			Go to <a href='${url}'>Github Repo</a>`;
+			Go to <a href='${homepage}'>Github Repo</a>`;
 		},
 		options: {
 			description: `home`,
