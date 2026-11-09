@@ -1,3 +1,7 @@
+> **Archived.** Written in 2020–21 and kept as a record of earlier work. It is no longer maintained and its dependencies are outdated.
+>
+> ⚠️ **Security note:** this code stores passwords as unsalted double-MD5 hashes, which are trivially crackable. Do not use it as-is; hash passwords with bcrypt, scrypt or argon2 instead. For a current setup, see [nodejs-typescript-rest-boilerplate](https://github.com/the-vishal-kumar/nodejs-typescript-rest-boilerplate).
+
 # hapi-mongodb-boilerplate
 
 A NodeJs application with Hapi framework, MongoDb as database, Mongoose as ODM.  
