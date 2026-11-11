@@ -10,7 +10,11 @@ const {
 	i18n: { UNABLE_TO_SAVE, INCORRECT_PASSWORD, NOT_FOUND },
 } = require(`../constants`);
 const {
-	UniversalFunctions: { encryptString, getTokenForUserId },
+	UniversalFunctions: {
+		encryptString,
+		getTokenForUserId,
+		deleteUnnecessaryUserData,
+	},
 } = require(`../util`);
 
 const create = async (payload) => {
@@ -19,7 +23,7 @@ const create = async (payload) => {
 		...payload,
 		password: encryptedPassword,
 	});
-	if (data && data._id) return data;
+	if (data && data._id) return deleteUnnecessaryUserData(data.toObject());
 	else throw UNABLE_TO_SAVE;
 };
 

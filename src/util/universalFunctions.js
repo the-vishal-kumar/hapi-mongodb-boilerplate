@@ -38,7 +38,7 @@ const verifyToken = async (token) => {
 };
 
 const deleteUnnecessaryUserData = (data) => {
-	delete data.pwd;
+	delete data.password;
 	delete data.accessToken;
 	delete data.__v;
 	return data;
