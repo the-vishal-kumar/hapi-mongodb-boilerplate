@@ -59,6 +59,11 @@ const init = async () => {
 		default:
 			break;
 		}
+		// Never write credentials to the log.
+		const loggablePayload = { ...payload };
+		[`password`, `confirmPassword`].forEach((key) => {
+			if (key in loggablePayload) loggablePayload[key] = `[redacted]`;
+		});
 		const traffic = request.traffic();
 		const indexOfPath = paths.indexOf(request.path);
 		if (indexOfPath == -1) {
@@ -70,7 +75,7 @@ const init = async () => {
           // `finish=${new Date(traffic.timeFinish)} ` +
           `duration=${traffic.timeDuration}ms ` +
           `statusCode=${request.response.statusCode} \n` +
-          `payload=${JSON.stringify(payload)}`
+          `payload=${JSON.stringify(loggablePayload)}`
 			);
 		}
 	});
