@@ -13,7 +13,6 @@ const {
 const init = async () => {
 	mongoose.connection.once(`open`, async () => {
 		console.info(`MongoDB event open`);
-		console.debug(`MongoDB connected to ${mongoUri}`);
 
 		mongoose.connection.on(`connected`, () => {
 			console.info(`MongoDB event connected`);
